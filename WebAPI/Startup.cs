@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Persistence;
+using WebAPI.Extensions;
 
 namespace WebAPI
 {
@@ -45,6 +46,8 @@ namespace WebAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseErrorHandlingMiddleware();
 
             app.UseEndpoints(endpoints =>
             {
